@@ -8,5 +8,5 @@ export class User {
   patronymic?: string;
   password: string;
   email: string;
-  userRole: UserRole;
+  role: UserRole;
 }

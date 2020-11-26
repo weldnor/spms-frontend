@@ -1,0 +1,8 @@
+<ng-container *ngIf="users != undefined">
+  <div *ngFor="let user of users">
+    <div>{{user.username}}</div>
+    <div>{{user.email}}</div>
+    <div>{{user.role.name}}</div>
+    <button (click)="deleteUser(user.userId)">delete</button>
+  </div>
+</ng-container>
