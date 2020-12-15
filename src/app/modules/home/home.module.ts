@@ -6,10 +6,11 @@ import { HomePage } from './pages/home/home.page';
 import {EditableUserListComponent} from './compontents/editable-user-list/editable-user-list.component';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import { GlobalRoleListComponent } from './compontents/global-role-list/global-role-list.component';
 
 
 @NgModule({
-  declarations: [HomePage, EditableUserListComponent],
+  declarations: [HomePage, EditableUserListComponent, GlobalRoleListComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
