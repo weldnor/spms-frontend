@@ -7,10 +7,11 @@ import {EditableUserListComponent} from './compontents/editable-user-list/editab
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import { GlobalRoleListComponent } from './compontents/global-role-list/global-role-list.component';
+import { EditableProjectListComponent } from './compontents/editable-project-list/editable-project-list.component';
 
 
 @NgModule({
-  declarations: [HomePage, EditableUserListComponent, GlobalRoleListComponent],
+  declarations: [HomePage, EditableUserListComponent, GlobalRoleListComponent, EditableProjectListComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
