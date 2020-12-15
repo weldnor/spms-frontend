@@ -1,4 +1,4 @@
-import {UserRole} from './user-role.model';
+import {GlobalRole} from './global-role.model';
 
 export class User {
   userId: number;
@@ -8,5 +8,5 @@ export class User {
   patronymic?: string;
   password: string;
   email: string;
-  role: UserRole;
+  globalRoles: GlobalRole[];
 }

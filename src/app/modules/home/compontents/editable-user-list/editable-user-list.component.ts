@@ -3,11 +3,11 @@ import {UserService} from '../../../../core/api/user.service';
 import {User} from '../../../../core/models/user.model';
 
 @Component({
-  selector: 'app-editable-user-viewer',
-  templateUrl: './editable-user-viewer.component.html',
-  styleUrls: ['./editable-user-viewer.component.css']
+  selector: 'app-editable-user-list',
+  templateUrl: './editable-user-list.component.html',
+  styleUrls: ['./editable-user-list.component.sass']
 })
-export class EditableUserViewerComponent implements OnInit {
+export class EditableUserListComponent implements OnInit {
 
   constructor(private readonly userService: UserService) {
   }
@@ -28,5 +28,17 @@ export class EditableUserViewerComponent implements OnInit {
     this.userService.deleteUser(userId).subscribe(() => {
       this.update();
     });
+  }
+
+  handleInfo(user: User): void {
+
+  }
+
+  handleDelete($event: MouseEvent, user: User): void {
+
+  }
+
+  handleCreate($event: MouseEvent): void {
+
   }
 }

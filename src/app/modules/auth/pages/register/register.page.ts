@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
-  styleUrls: ['./register.page.css']
+  styleUrls: ['./register.page.sass']
 })
 export class RegisterPage implements OnInit {
 

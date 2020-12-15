@@ -122,5 +122,10 @@
       }
     }
   },
-  "defaultProject": "spms-frontend"
+  "defaultProject": "spms-frontend",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "sass"
+    }
+  }
 }
