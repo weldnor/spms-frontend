@@ -16,6 +16,26 @@ export class UserService {
     return this.http.get<User[]>(`${environment.api}/users`);
   }
 
+
+  register(
+    username: string,
+    firstName: string,
+    secondName: number,
+    patronymic: string,
+    password: string,
+    email: string
+  ): Observable<User | null> {
+    const data = {
+      username,
+      firstName,
+      secondName,
+      patronymic,
+      password,
+      email
+    };
+    return this.http.post<User | null>(`${environment.api}/public/register`, data);
+  }
+
   deleteUser(userId: number): Observable<User | null> {
     return this.http.delete<User | null>(`${environment.api}/users/${userId}`);
   }
