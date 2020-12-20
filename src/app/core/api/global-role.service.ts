@@ -12,7 +12,29 @@ export class GlobalRoleService {
   constructor(private readonly http: HttpClient) {
   }
 
-  getAllRoles(): Observable<GlobalRole[]> {
+  getAll(): Observable<GlobalRole[]> {
     return this.http.get<GlobalRole[]>(`${environment.api}/global_roles`);
+  }
+
+  getById(id: number): Observable<GlobalRole> {
+    return this.http.get<GlobalRole>(`${environment.api}/global_roles/${id}`);
+  }
+
+  add(name: string): Observable<GlobalRole> {
+    const data = {
+      name
+    };
+    return this.http.put<GlobalRole>(`${environment.api}/global_roles`, data);
+  }
+
+  update(name: string, id: number): Observable<any> {
+    const data = {
+      name
+    };
+    return this.http.post<GlobalRole>(`${environment.api}/global_roles/${id}`, data);
+  }
+
+  deleteById(id: number): Observable<any> {
+    return this.http.delete<GlobalRole>(`${environment.api}/global_roles/${id}`);
   }
 }
