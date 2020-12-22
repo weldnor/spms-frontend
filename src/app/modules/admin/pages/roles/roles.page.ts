@@ -12,7 +12,7 @@ import {EditGlobalRoleDialog} from '../../components/dialogs/edit-global-role/ed
 })
 export class RolesPage implements OnInit {
 
-  roles?: GlobalRole[] = [{name: 'USER', globalRoleId: 1}];
+  roles?: GlobalRole[] = [];
   displayedColumns = ['globalRoleId', 'name', 'actions'];
 
   form: FormGroup;
