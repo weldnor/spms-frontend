@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>
+  Edit user
+</h1>
+
+<mat-dialog-content class="content">
+  <form class="form" [formGroup]="form">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>firstName</mat-label>
+        <label>
+          <input type="text" matInput formControlName="firstName"/>
+        </label>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>secondName</mat-label>
+        <label>
+          <input type="text" matInput formControlName="secondName"/>
+        </label>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>patronymic</mat-label>
+        <label>
+          <input type="text" matInput formControlName="patronymic"/>
+        </label>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>email</mat-label>
+        <label>
+          <input type="text" matInput formControlName="email"/>
+        </label>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>password</mat-label>
+        <label>
+          <input type="text" matInput formControlName="password"/>
+        </label>
+      </mat-form-field>
+    </p>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button [disabled]="!form.valid" (click)="onClickSaveButton()">
+    Save
+  </button>
+  <button mat-button mat-dialog-close="undefined">
+    Cancel
+  </button>
+</mat-dialog-actions>

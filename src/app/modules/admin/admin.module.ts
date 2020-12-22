@@ -11,6 +11,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { EditGlobalRoleDialog } from './components/dialogs/edit-global-role/edit-global-role.dialog';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UsersPage } from './pages/users/users.page';
+import { EditUserDialog } from './components/dialogs/edit-user/edit-user.dialog';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     HomePage,
     RolesPage,
     EditGlobalRoleDialog,
+    UsersPage,
+    EditUserDialog,
   ],
   imports: [
     CommonModule,

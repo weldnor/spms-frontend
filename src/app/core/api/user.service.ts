@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../models/user.model';
 import {environment} from '../../../environments/environment';
+import {UpdateUserDto} from '../dto/update-user.dto';
+import {NewUserDto} from '../dto/new-user-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -16,24 +18,16 @@ export class UserService {
     return this.http.get<User[]>(`${environment.api}/users`);
   }
 
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${environment.api}/users/${id}`);
+  }
 
-  register(
-    username: string,
-    firstName: string,
-    secondName: number,
-    patronymic: string,
-    password: string,
-    email: string
-  ): Observable<User | null> {
-    const data = {
-      username,
-      firstName,
-      secondName,
-      patronymic,
-      password,
-      email
-    };
-    return this.http.post<User | null>(`${environment.api}/public/register`, data);
+  registerUser(dto: NewUserDto): Observable<any> {
+    return this.http.post<any>(`${environment.api}/public/register`, dto);
+  }
+
+  updateUser(dto: UpdateUserDto, userId: number): Observable<any> {
+    return this.http.post<any>(`${environment.api}/users/${userId}`, dto);
   }
 
   deleteUser(userId: number): Observable<User | null> {
