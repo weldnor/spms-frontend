@@ -4,7 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {User} from '../../../../core/models/user.model';
 import {UserService} from '../../../../core/api/user.service';
 import {EditUserDialog} from '../../components/dialogs/edit-user/edit-user.dialog';
-import {NewUserDto} from '../../../../core/dto/new-user-dto';
+import {NewUserDto} from '../../../../core/dto/user/new-user.dto';
 
 @Component({
   selector: 'app-users',

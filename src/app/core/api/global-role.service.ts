@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {GlobalRole} from '../models/global-role.model';
+import {NewGlobalRoleDto} from '../dto/global-role/new-global-role.dto';
+import {UpdateGlobalRoleDto} from '../dto/global-role/update-global-role.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -12,29 +14,23 @@ export class GlobalRoleService {
   constructor(private readonly http: HttpClient) {
   }
 
-  getAll(): Observable<GlobalRole[]> {
+  getAllGlobalRoles(): Observable<GlobalRole[]> {
     return this.http.get<GlobalRole[]>(`${environment.api}/global_roles`);
   }
 
-  getById(id: number): Observable<GlobalRole> {
+  getGlobalRole(id: number): Observable<GlobalRole> {
     return this.http.get<GlobalRole>(`${environment.api}/global_roles/${id}`);
   }
 
-  add(name: string): Observable<GlobalRole> {
-    const data = {
-      name
-    };
-    return this.http.put<GlobalRole>(`${environment.api}/global_roles`, data);
+  addGlobalRole(dto: NewGlobalRoleDto): Observable<GlobalRole> {
+    return this.http.put<GlobalRole>(`${environment.api}/global_roles`, dto);
   }
 
-  update(name: string, id: number): Observable<any> {
-    const data = {
-      name
-    };
-    return this.http.post<GlobalRole>(`${environment.api}/global_roles/${id}`, data);
+  updateGlobalRole(dto: UpdateGlobalRoleDto, id: number): Observable<any> {
+    return this.http.post<GlobalRole>(`${environment.api}/global_roles/${id}`, dto);
   }
 
-  deleteById(id: number): Observable<any> {
+  deleteGlobalRole(id: number): Observable<any> {
     return this.http.delete<GlobalRole>(`${environment.api}/global_roles/${id}`);
   }
 }

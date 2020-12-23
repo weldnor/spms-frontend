@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {GlobalRoleService} from '../../../../../core/api/global-role.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UpdateGlobalRoleDto} from '../../../../../core/dto/global-role/update-global-role.dto';
 
 @Component({
   selector: 'app-edit-global-role',
@@ -28,7 +29,7 @@ export class EditGlobalRoleDialog implements OnInit {
       name: [null, [Validators.required]]
     });
 
-    this.globalRoleService.getById(this.globalRoleId).subscribe(value => {
+    this.globalRoleService.getGlobalRole(this.globalRoleId).subscribe(value => {
       this.form.get('name').setValue(value.name);
     });
   }
@@ -36,7 +37,10 @@ export class EditGlobalRoleDialog implements OnInit {
 
   onClickSaveButton(): void {
     const name: string = this.form.get('name').value;
-    this.globalRoleService.update(name, this.globalRoleId).subscribe(value => {
+
+    const dto: UpdateGlobalRoleDto = new UpdateGlobalRoleDto(name);
+
+    this.globalRoleService.updateGlobalRole(dto, this.globalRoleId).subscribe(value => {
       this.dialogRef.close();
     });
   }

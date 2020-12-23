@@ -4,6 +4,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {GlobalRoleService} from '../../../../core/api/global-role.service';
 import {MatDialog} from '@angular/material/dialog';
 import {EditGlobalRoleDialog} from '../../components/dialogs/edit-global-role/edit-global-role.dialog';
+import {NewUserDto} from '../../../../core/dto/user/new-user.dto';
+import {NewGlobalRoleDto} from '../../../../core/dto/global-role/new-global-role.dto';
 
 @Component({
   selector: 'app-roles',
@@ -33,7 +35,7 @@ export class RolesPage implements OnInit {
   }
 
   update(): void {
-    this.globalRoleService.getAll().subscribe(value => {
+    this.globalRoleService.getAllGlobalRoles().subscribe(value => {
       this.roles = value;
     });
   }
@@ -41,7 +43,9 @@ export class RolesPage implements OnInit {
   onClickSaveButton(): void {
     const name: string = this.form.get('name').value;
 
-    this.globalRoleService.add(name).subscribe(value => {
+    const dto: NewGlobalRoleDto = new NewGlobalRoleDto(name);
+
+    this.globalRoleService.addGlobalRole(dto).subscribe(value => {
       this.update();
     });
   }
@@ -53,7 +57,7 @@ export class RolesPage implements OnInit {
   }
 
   onClickDeleteButton(id: number): void {
-    this.globalRoleService.deleteById(id).subscribe(value => {
+    this.globalRoleService.deleteGlobalRole(id).subscribe(value => {
       this.update();
     });
   }

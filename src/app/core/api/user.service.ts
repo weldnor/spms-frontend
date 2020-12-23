@@ -3,8 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../models/user.model';
 import {environment} from '../../../environments/environment';
-import {UpdateUserDto} from '../dto/update-user.dto';
-import {NewUserDto} from '../dto/new-user-dto';
+import {UpdateUserDto} from '../dto/user/update-user.dto';
+import {NewUserDto} from '../dto/user/new-user.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class UserService {
     return this.http.get<User[]>(`${environment.api}/users`);
   }
 
-  getUserById(id: number): Observable<User> {
+  getUser(id: number): Observable<User> {
     return this.http.get<User>(`${environment.api}/users/${id}`);
   }
 
@@ -31,6 +31,6 @@ export class UserService {
   }
 
   deleteUser(userId: number): Observable<User | null> {
-    return this.http.delete<User | null>(`${environment.api}/users/${userId}`);
+    return this.http.delete<any>(`${environment.api}/users/${userId}`);
   }
 }

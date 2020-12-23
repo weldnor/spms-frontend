@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {UserService} from '../../../../../core/api/user.service';
-import {UpdateUserDto} from '../../../../../core/dto/update-user.dto';
+import {UpdateUserDto} from '../../../../../core/dto/user/update-user.dto';
 
 @Component({
   selector: 'app-edit-user',
@@ -33,7 +33,7 @@ export class EditUserDialog implements OnInit {
       password: [null, []],
     });
 
-    this.userService.getUserById(this.userId).subscribe(value => {
+    this.userService.getUser(this.userId).subscribe(value => {
       this.form.get('firstName').setValue(value.firstName);
       this.form.get('secondName').setValue(value.secondName);
       this.form.get('patronymic').setValue(value.patronymic);
