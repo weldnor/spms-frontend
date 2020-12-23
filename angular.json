@@ -125,7 +125,7 @@
   "defaultProject": "spms-frontend",
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "sass"
+      "styleext": "scss"
     }
   }
 }

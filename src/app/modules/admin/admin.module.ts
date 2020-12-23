@@ -13,6 +13,8 @@ import { EditGlobalRoleDialog } from './components/dialogs/edit-global-role/edit
 import {MatDialogModule} from '@angular/material/dialog';
 import { UsersPage } from './pages/users/users.page';
 import { EditUserDialog } from './components/dialogs/edit-user/edit-user.dialog';
+import { ProjectsPage } from './pages/projects/projects.page';
+import { EditProjectDialog } from './components/dialogs/edit-project/edit-project.dialog';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { EditUserDialog } from './components/dialogs/edit-user/edit-user.dialog'
     EditGlobalRoleDialog,
     UsersPage,
     EditUserDialog,
+    ProjectsPage,
+    EditProjectDialog,
   ],
   imports: [
     CommonModule,
