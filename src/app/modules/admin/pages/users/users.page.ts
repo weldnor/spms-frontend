@@ -14,7 +14,7 @@ import {NewUserDto} from '../../../../core/dto/user/new-user.dto';
 export class UsersPage implements OnInit {
 
   users?: User[] = [];
-  displayedColumns = ['userId', 'username', 'firstName', 'secondName', 'patronymic', 'email', 'actions'];
+  displayedColumns = ['username', 'firstName', 'secondName', 'patronymic', 'email', 'actions'];
 
   form: FormGroup;
 

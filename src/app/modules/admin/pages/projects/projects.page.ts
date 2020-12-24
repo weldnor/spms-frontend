@@ -14,7 +14,7 @@ import {EditProjectDialog} from '../../components/dialogs/edit-project/edit-proj
 export class ProjectsPage implements OnInit {
 
   projects?: Project[] = [];
-  displayedColumns = ['projectId', 'name', 'ownerId', 'description', 'actions'];
+  displayedColumns = ['name', 'ownerId', 'description', 'actions'];
 
   form: FormGroup;
 

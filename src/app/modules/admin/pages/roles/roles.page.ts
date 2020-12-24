@@ -15,7 +15,7 @@ import {NewGlobalRoleDto} from '../../../../core/dto/global-role/new-global-role
 export class RolesPage implements OnInit {
 
   roles?: GlobalRole[] = [];
-  displayedColumns = ['globalRoleId', 'name', 'actions'];
+  displayedColumns = ['name', 'actions'];
 
   form: FormGroup;
 

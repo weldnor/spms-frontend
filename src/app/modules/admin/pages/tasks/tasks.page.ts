@@ -14,7 +14,7 @@ import {EditTaskDialog} from '../../components/dialogs/edit-task/edit-task.dialo
 export class TasksPage implements OnInit {
 
   tasks?: Task[] = [];
-  displayedColumns = ['taskId', 'projectId', 'creatorId', 'name', 'description', 'statusId', 'actions'];
+  displayedColumns = ['projectId', 'creatorId', 'name', 'description', 'statusId', 'actions'];
 
   form: FormGroup;
 
