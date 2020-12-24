@@ -17,6 +17,7 @@ import {ProjectsPage} from './pages/projects/projects.page';
 import {EditProjectDialog} from './components/dialogs/edit-project/edit-project.dialog';
 import {TasksPage} from './pages/tasks/tasks.page';
 import {EditTaskDialog} from './components/dialogs/edit-task/edit-task.dialog';
+import { StatisticPage } from './pages/statistic/statistic.page';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {EditTaskDialog} from './components/dialogs/edit-task/edit-task.dialog';
     EditProjectDialog,
     TasksPage,
     EditTaskDialog,
+    StatisticPage,
   ],
   imports: [
     CommonModule,

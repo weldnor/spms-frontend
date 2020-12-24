@@ -5,6 +5,7 @@ import {RolesPage} from './pages/roles/roles.page';
 import {UsersPage} from './pages/users/users.page';
 import {ProjectsPage} from './pages/projects/projects.page';
 import {TasksPage} from './pages/tasks/tasks.page';
+import {StatisticPage} from './pages/statistic/statistic.page';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'tasks',
     component: TasksPage
+  },
+  {
+    path: 'statistic',
+    component: StatisticPage
   },
 
 ];
