@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {HomePage} from './pages/home/home.page';
 import {RolesPage} from './pages/roles/roles.page';
 import {UsersPage} from './pages/users/users.page';
 import {ProjectsPage} from './pages/projects/projects.page';
+import {TasksPage} from './pages/tasks/tasks.page';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'projects',
     component: ProjectsPage
+  },
+  {
+    path: 'tasks',
+    component: TasksPage
   },
 
 ];

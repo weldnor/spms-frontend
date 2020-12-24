@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>
+  Edit task
+</h1>
+
+<mat-dialog-content class="content">
+  <form class="form" [formGroup]="form">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>name</mat-label>
+        <label>
+          <input type="text" matInput formControlName="name" required/>
+        </label>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>description</mat-label>
+        <label>
+          <input type="text" matInput formControlName="description" required/>
+        </label>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>statusId</mat-label>
+        <label>
+          <input type="text" matInput formControlName="statusId" required/>
+        </label>
+      </mat-form-field>
+    </p>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button [disabled]="!form.valid" (click)="onClickSaveButton()">
+    Save
+  </button>
+  <button mat-button mat-dialog-close="undefined">
+    Cancel
+  </button>
+</mat-dialog-actions>
