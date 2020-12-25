@@ -17,7 +17,8 @@ import {ProjectsPage} from './pages/projects/projects.page';
 import {EditProjectDialog} from './components/dialogs/edit-project/edit-project.dialog';
 import {TasksPage} from './pages/tasks/tasks.page';
 import {EditTaskDialog} from './components/dialogs/edit-task/edit-task.dialog';
-import { StatisticPage } from './pages/statistic/statistic.page';
+import {StatisticPage} from './pages/statistic/statistic.page';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -39,7 +40,11 @@ import { StatisticPage } from './pages/statistic/statistic.page';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule, ReactiveFormsModule, MatButtonModule, MatDialogModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatRadioModule
   ]
 })
 export class AdminModule {

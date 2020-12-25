@@ -18,6 +18,9 @@ export class UsersPage implements OnInit {
 
   form: FormGroup;
 
+  nameFilterValue = '';
+  roleFilterValue = '';
+
   constructor(
     private readonly userService: UserService,
     private readonly formBuilder: FormBuilder,
@@ -38,7 +41,7 @@ export class UsersPage implements OnInit {
   }
 
   update(): void {
-    this.userService.getAllUsers().subscribe(value => {
+    this.userService.getAllUsers(this.nameFilterValue, this.roleFilterValue).subscribe(value => {
       this.users = value;
     });
   }
@@ -68,5 +71,17 @@ export class UsersPage implements OnInit {
     this.userService.deleteUser(id).subscribe(value => {
       this.update();
     });
+  }
+
+  onNameFilterInputChanged($event: any): void {
+    this.nameFilterValue = $event.value;
+    console.log(this.nameFilterValue);
+    this.update();
+  }
+
+  onRoleFilterInputChanged($event: any): void {
+    this.roleFilterValue = $event.value;
+    console.log(this.roleFilterValue);
+    this.update();
   }
 }

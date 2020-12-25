@@ -1,6 +1,22 @@
 <div class="block">
   <div class="block__header">View&edit users</div>
   <div class="block__content">
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>search by username</mat-label>
+        <input matInput (input)="onNameFilterInputChanged($event.target)" placeholder="username">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-radio-group aria-label="Select an option" (change)="onRoleFilterInputChanged($event)">
+        <mat-radio-button value="all" name="roleFilter" [checked]="true">all</mat-radio-button>
+        <mat-radio-button value="admin" name="roleFilter">admins</mat-radio-button>
+        <mat-radio-button value="user" name="roleFilter">users</mat-radio-button>
+      </mat-radio-group>
+    </p>
+
     <table mat-table [dataSource]="users" class="table">
       <ng-container matColumnDef="userId">
         <th mat-header-cell *matHeaderCellDef width="200px">userId</th>

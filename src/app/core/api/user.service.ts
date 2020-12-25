@@ -14,8 +14,16 @@ export class UserService {
   constructor(private readonly http: HttpClient) {
   }
 
-  getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${environment.api}/users`);
+  getAllUsers(name?: string, role?: string): Observable<User[]> {
+    let params = '';
+
+    if (name !== null && name !== '') {
+      params += 'name=' + encodeURI(name) + '&';
+    }
+    if (role !== null && role !== '') {
+      params += 'role=' + encodeURI(role) + '&';
+    }
+    return this.http.get<User[]>(`${environment.api}/users?${params}`);
   }
 
   getUser(id: number): Observable<User> {
